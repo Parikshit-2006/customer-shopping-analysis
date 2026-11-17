@@ -1,55 +1,34 @@
 # Customer Shopping Analysis
 
-An interview-ready analytics portfolio built from a 3,900-record customer shopping dataset. It contains polished charts, corrected SQL, and a Python-to-MySQL loading script—no Tableau project or website required.
+An interview-ready analytics portfolio built from a 3,900-record customer shopping dataset. It contains six clear charts, corrected SQL queries, and the original Python-to-MySQL loading script.
 
 ## Charts
 
 | Chart | What it answers |
 | --- | --- |
-| `charts/revenue_by_gender.svg` | Which gender generated more revenue? |
-| `charts/revenue_by_category.svg` | Which product category contributes the most revenue? |
-| `charts/revenue_by_age_group.svg` | How does revenue vary by age segment? |
-| `charts/subscription_mix.svg` | What share of customers are subscribers? |
-| `charts/discount_rate_by_product.svg` | Which products are most often purchased with a discount? |
-| `charts/shipping_average_spend.svg` | How does average spend compare for Express and Standard shipping? |
+| Revenue by gender | Which gender generated more revenue? |
+| Revenue by category | Which product category contributes the most revenue? |
+| Revenue by age group | How does revenue vary by age segment? |
+| Subscription mix | What share of customers are subscribers? |
+| Discount rate by product | Which products are most often bought with a discount? |
+| Average spend by shipping type | How do Express and Standard orders compare? |
 
-Each chart has one plain-English title and can be opened directly in a browser, added to a presentation, or discussed during an interview.
-
-## Highlights
-
-- Six clear SVG charts generated directly from the raw dataset.
-- Corrected MySQL queries for the original ten questions plus two useful additions.
-- A MAMP/phpMyAdmin-compatible Python loader that reads connection settings from environment variables.
+Open any file in the charts folder to view a ready-to-present SVG chart.
 
 ## Project structure
 
-```text
-.
-├── charts/                    # Ready-to-present SVG chart files
-├── scripts/load_customer_data.py
-├── scripts/generate_charts.py
-├── sql/customer_dashboard_queries.sql
-├── docs/analysis-notes.md
-├── data/README.md
-├── requirements.txt
-└── .env.example
-```
+- charts/ — six interview-ready chart files
+- scripts/customer.py — original Python loader
+- docs/ — analysis notes and query corrections
+- sql/ — MySQL / phpMyAdmin query set
 
-## Regenerate the charts
+## Run the original Python loader
 
-1. Copy the dataset to `data/customer.csv`.
-2. Run: `python scripts/generate_charts.py`.
-3. Open the generated SVG files from the `charts/` folder.
+1. Put the raw input CSV beside the folder where you run the script and name it `customer_shopping_behavior.csv`.
+2. Install requirements: `pip install -r requirements.txt`.
+3. Run: `python scripts/customer.py`.
+4. Use the SQL file in phpMyAdmin after the data loads.
 
-## Load the dataset into MySQL
+## Interview takeaway
 
-1. Copy the dataset to `data/customer.csv` (it is intentionally ignored by Git).
-2. Create a virtual environment and install dependencies: `pip install -r requirements.txt`.
-3. Copy `.env.example` values into your terminal environment (or adjust them for your MySQL/MAMP setup).
-4. Run `python scripts/load_customer_data.py`.
-5. Run any query in `sql/customer_dashboard_queries.sql` through phpMyAdmin.
-
-## Analytical notes
-
-The dashboard figures are calculated from the supplied 3,900-record dataset. See [analysis notes](docs/analysis-notes.md) for the query corrections and interpretation cautions.
-
+The charts are intentionally simple: one question per chart, readable labels, and a short narrative that does not overstate what the data proves.
